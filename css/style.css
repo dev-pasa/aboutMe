@@ -1,0 +1,25 @@
+body{
+  background-color: rgb(40, 118, 165);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h1#heading{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 45px;
+  color : rgb(40, 220, 222);
+}
+h2, h3{
+  text-align:center;
+  color : darkgreen; 
+}
+
+article{
+  margin: 0px auto;
+  text-align: center;
+  font-family: Arial;
+  width: 50%;
+  border: 4px double #a8a89f;
+  border-radius: 15px;
+  background-color: rgb(221, 192, 60);
+}
