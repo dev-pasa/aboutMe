@@ -39,6 +39,7 @@ for(var i = 0; i <= questionsArray.length; ++i){
       
       console.log('User answer for Q' + (i +1) + ' ' + userAns);
       correctAns++;
+      // itit
       // if (userAns === '' && userAns !== allResponse[i]){
       //   alert('Invalid response! Please enter yes or no');
       // }
