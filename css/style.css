@@ -1,6 +1,14 @@
 body{
-  background-color: rgb(40, 118, 165);
   font-family: 'Courier New', Courier, monospace;
+  background-image: url('../../aboutMe/img/all-about-me.jpg')
+}
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 20%;
+
 }
 
 h1#heading{
@@ -11,19 +19,23 @@ h1#heading{
   padding : 10px;
   border: 10px rgb(77, 33, 33);
 }
+
+p{padding-bottom: 15px;
+}
+
 h2, h3{
   text-align:center;
   color : darkgreen; 
 }
 
 article{
-  height: 150px;
-  width: 30%;
+  line-height: 1.5;
+  height: auto;
   margin: 0px auto;
-  text-align: center;
+  text-align: justify;
   font-family: Arial;
-  width: 50%;
-  border: 4px double #a8a89f;
+  width: 59%;
+  border: 4px double #ccccc7;
   border-radius: 15px;
-  background-color: rgb(221, 192, 60);
+  background-color: rgb(247, 246, 242);
 }

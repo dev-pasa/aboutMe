@@ -3,56 +3,69 @@
 
 alert('Welcome! Let\'s play a guessing game so you can learn more about me?');
 
-var username = prompt('What is your name?').toUpperCase();
+var username = prompt('What is your name?');
 
-alert('Welcome, ' + username + ' Let\'s get started!');
+alert('So Let\'s get started!');
 
-var answerOne = prompt('Was I born in the US?').toLowerCase();
+//initialize correctAnswers
+var correctAns = 0; 
 
-if(answerOne === 'no' || answerOne === 'n'){
-  alert('You got it right! I was not born in the US.');
-  console.log('The user got Question 1 Correct');
-}else{
-alert('You Fail, I was not born in the US');
-console.log('The user got Question 1 wrong');
-}
-var correctAns = 0;
-
-function askUserQuestions(){
-
-var questionsArray=[
-'Does I speak languages other than english?',
+//creating a question array
+var questionsArray1=[
+'Do I speak any languages other than english?',
 'Did I serve in the military?', 
 'Do I have a college degree?' , 
-'Do I love being a developer?'];
+'Do I love being a developer?', 
+'Do I love going on road trips?', 
+'Was I born in Washington?'];
 
-var answersWordsArr = ['yes', 'yes', 'yes', 'yes'];
-var answersWordsArr2 = ['Yes', 'Yes', 'Yes', 'Yes'];
-var answersCharArr = ['y', 'y', 'y', 'y'];
+//list of correct answers
+var answersWordsArr = ['yes', 'yes', 'yes', 'yes', 'no', 'no'];
+var answersWordsArr2 = ['Yes', 'Yes', 'Yes', 'Yes', 'No', 'No'];
+var answersCharArr = ['y', 'y', 'y', 'y', 'n', 'n'];
 var allResponse = ["yes", "Yes", "No", "no", "y", "n"];
 
-for(var i = 0; i <= questionsArray.length; ++i){
+for(var i = 0; i < questionsArray1.length ; ++i){
   var userAns = prompt(questionsArray[i]).toLowerCase();
   
   if (userAns === answersWordsArr[i] || userAns === answersWordsArr2[i] ||
     userAns === answersCharArr[i]){
       
       console.log('User answer for Q' + (i +1) + ' ' + userAns);
-      correctAns++;
-      // itit
-      // if (userAns === '' && userAns !== allResponse[i]){
-      //   alert('Invalid response! Please enter yes or no');
-      // }
-      // else {alert ("You are correct");}
       alert ("You are correct");
-    }
+      correctAns++;
+      console.log(correctAns);
+  }
     else {
-      alert('You are wrong')
+      if(userAns === '' && userAns !== allResponse[i]){
+        alert("Invalid response! Plese enter yes or no");
+      }
+      else {
+        alert('Sorry wrong answer!')
     }
+  }
 }
+alert("You got " + correctAns + " out of 6 questions correct. Good luck! next time " + username );
 
-}
-askUserQuestions();
+// alert('Now lets see if you can guess the number of states I\'ve besides Washington?');
+// //var questionsArray2=['Do you know the states I have lived previously'];
+// var stateLived = ['texas', 'louisiana', 'new york', 'innesota'];
+
+// var statesCorrect = false;
+
+// while(statesCorrect){
+//   var statesAns = prompt('Do you know the four states I have lived previously?').toLocaleLowerCase();
+//   if (statesAns === stateLived[i]){
+//     alert("You are correct");
+//   }
+//   else{
+//     alert("Uhh! That's not corect");
+//   }
+// }
+
+
+// var answerOne = prompt("Was I born in Washington?").toLowerCase();
+
 
 
 // var answerTwo = prompt('Does I speak languages other than english?').toLowerCase();
