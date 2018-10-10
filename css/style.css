@@ -7,7 +7,9 @@ h1#heading{
   text-align: center;
   font-weight: bolder;
   font-size: 45px;
-  color : rgb(40, 220, 222);
+  color : rgb(129, 12, 31);
+  padding : 10px;
+  border: 10px rgb(77, 33, 33);
 }
 h2, h3{
   text-align:center;
@@ -15,6 +17,7 @@ h2, h3{
 }
 
 article{
+  height: 220%;
   margin: 0px auto;
   text-align: center;
   font-family: Arial;
