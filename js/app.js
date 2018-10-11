@@ -51,7 +51,7 @@ for(var i = 0; i < questionsArray1.length ; i++){
       console.log(correctAns);
 
       //stop the iteration when the questions are complete
-      break;
+      
       
   }
   // now setting the else condition
@@ -79,7 +79,7 @@ for (var i = 4; i > 0; i--){
   var numPred = prompt("Guess how many states I've lived in the past. Guess a number between 1 to 10.")
 
   //if the user get the guess right alert Nice guess and record the answer
-  if(numPred = numStates){
+  if(numPred == numStates){
     alert("Nice guess");
 
     //increment the answer
@@ -135,7 +135,7 @@ for ( var j = 6; j > 0; j--){
 }
 
 //alert the user, the number of correct answers the user was able to provide
-alert("You got " + correctAns + " out of 8 questions correct. Good luck! next time " + username );
+alert("You got " + correctAns + " out of 8 questions correct. You did good " + username + "!");
 
 
 
