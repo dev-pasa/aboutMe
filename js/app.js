@@ -1,16 +1,18 @@
 'use strict';
 
-
+//let the user know what is going on
 alert('Welcome! Let\'s play a guessing game so you can learn more about me?');
 
+//Let's ask the user what his/her name is.
 var username = prompt('What is your name?');
 
-alert('So Let\'s get started!');
+//Letting the user know, were about to begin the quiz
+alert('So ' + username+ ' let\'s get started!');
 
 //initialize correctAnswers
 var correctAns = 0; 
 
-//creating a question array
+//creating a array of questions
 var questionsArray1=[
 'Do I speak any languages other than english?',
 'Did I serve in the military?', 
@@ -19,49 +21,126 @@ var questionsArray1=[
 'Do I love going on road trips?', 
 'Was I born in Washington?'];
 
-//list of correct answers
+//arry of answers to the questions being asked to the user
 var answersWordsArr = ['yes', 'yes', 'yes', 'yes', 'no', 'no'];
 var answersWordsArr2 = ['Yes', 'Yes', 'Yes', 'Yes', 'No', 'No'];
 var answersCharArr = ['y', 'y', 'y', 'y', 'n', 'n'];
+
+//valid response to the users
 var allResponse = ["yes", "Yes", "No", "no", "y", "n"];
 
-for(var i = 0; i < questionsArray1.length ; ++i){
-  var userAns = prompt(questionsArray[i]).toLowerCase();
+//initialize the i to 0, set the length to the length of questions array and increment the array by 1
+for(var i = 0; i < questionsArray1.length ; i++){
+
+  //ask the user the questions in incremental order
+  var userAns = prompt(questionsArray1[i]).toLowerCase();
   
+  //set the condition to the answer to the questions being asked
   if (userAns === answersWordsArr[i] || userAns === answersWordsArr2[i] ||
     userAns === answersCharArr[i]){
       
+      //log the response 
       console.log('User answer for Q' + (i +1) + ' ' + userAns);
+
+      //if user is correct, alert the user that he/she is correct
       alert ("You are correct");
+
+      //keep adding the correct answer
       correctAns++;
+
       console.log(correctAns);
+
+      //stop the iteration when the questions are complete
+      break;
+      
   }
+  // now setting the else condition
     else {
+      //if the response is not the valid response, let the user know
       if(userAns === '' && userAns !== allResponse[i]){
         alert("Invalid response! Plese enter yes or no");
       }
+      //if the users gets the answers wrong, let user know
       else {
         alert('Sorry wrong answer!')
     }
   }
 }
-alert("You got " + correctAns + " out of 6 questions correct. Good luck! next time " + username );
 
-// alert('Now lets see if you can guess the number of states I\'ve besides Washington?');
-// //var questionsArray2=['Do you know the states I have lived previously'];
-// var stateLived = ['texas', 'louisiana', 'new york', 'innesota'];
+//another question to the user quizzing him about me
+alert("Do you know how many states I have lived in? Let\'s play a guessing game. Let's guess the number of states I\'ve lived in.");
 
-// var statesCorrect = false;
+//the number of states I have lived in in the past
+var numStates = 4;
 
-// while(statesCorrect){
-//   var statesAns = prompt('Do you know the four states I have lived previously?').toLocaleLowerCase();
-//   if (statesAns === stateLived[i]){
-//     alert("You are correct");
-//   }
-//   else{
-//     alert("Uhh! That's not corect");
-//   }
-// }
+//creating a for loop of 4 chances
+for (var i = 4; i > 0; i--){
+  //prompt the user about 
+  var numPred = prompt("Guess how many states I've lived in the past. Guess a number between 1 to 10.")
+
+  //if the user get the guess right alert Nice guess and record the answer
+  if(numPred = numStates){
+    alert("Nice guess");
+
+    //increment the answer
+    correctAns ++;
+    break;
+  }
+  //set condition if the number is less than the actual number, guess a higher number
+  else if(numPred < numStates){
+    alert("Try guessing a little higher number.");
+  }
+
+  //if the user guess is higher than the actual number, guess a lower number
+  else if(numPred > numStates){
+    alert("Too high, guess a lower number.");
+}
+else{
+  //ask the user to input a valid number
+  alert("Input a valid number");
+}
+}
+
+//guessing game for the name of the states I've lived in
+alert('Now lets see if you can name the states I\'ve lived in the past?');
+
+//list of states I have lived in
+var statesLived = ['texas', 'louisiana', 'new york', 'minnesota'];
+
+//the user gets 6 attempts to get the answer right
+for ( var j = 6; j > 0; j--){
+ 
+  //ask the user the name of the states
+  var statesPred = prompt("How many states have I lived in. You have " + j + " chances remaining");
+
+  //log the user response
+  console.log("User answered: " + statesPred);
+
+  //if the user get any of the states correct, the user is alerted that the user got it right
+  if(statesLived.includes(statesPred)){
+    alert("You are right.");
+
+    //increment the correct answers
+    correctAns++;
+    break;
+  }
+  //if user didn't get it right let the user know
+  else if(!statesLived.includes(statesPred)){
+    alert("Almost! You are close.")
+  }
+  //if the user didn't get it right let the user know
+  else{
+    alert("You were close.")
+  }
+}
+
+//alert the user, the number of correct answers the user was able to provide
+alert("You got " + correctAns + " out of 8 questions correct. Good luck! next time " + username );
+
+
+
+
+
 
 
 // var answerOne = prompt("Was I born in Washington?").toLowerCase();
@@ -106,4 +185,3 @@ alert("You got " + correctAns + " out of 6 questions correct. Good luck! next ti
 // }else{
 // alert('Oh no! I do love developing stuff in the web.');
 // console.log('The user got Question 5 wrong');
-// }
