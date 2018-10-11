@@ -48,16 +48,15 @@ for(var i = 0; i < questionsArray1.length ; i++){
       //keep adding the correct answer
       correctAns++;
 
-      console.log(correctAns);
+      console.log("User got Question " + i + " : " + correctAns);
 
       //stop the iteration when the questions are complete
-      
-      
+            
   }
   // now setting the else condition
     else {
       //if the response is not the valid response, let the user know
-      if(userAns === '' && userAns !== allResponse[i]){
+      if(userAns ==='' && userAns !== allResponse[i]){
         alert("Invalid response! Plese enter yes or no");
       }
       //if the users gets the answers wrong, let user know
@@ -76,10 +75,10 @@ var numStates = 4;
 //creating a for loop of 4 chances
 for (var i = 4; i > 0; i--){
   //prompt the user about 
-  var numPred = prompt("Guess how many states I've lived in the past. Guess a number between 1 to 10.")
+  var numPred = parseInt(prompt("Guess how many states I've lived in the past. Guess a number between 1 to 10."));
 
   //if the user get the guess right alert Nice guess and record the answer
-  if(numPred == numStates){
+  if(numPred === numStates){
     alert("Nice guess");
 
     //increment the answer
@@ -111,26 +110,20 @@ var statesLived = ['texas', 'louisiana', 'new york', 'minnesota'];
 for ( var j = 6; j > 0; j--){
  
   //ask the user the name of the states
-  var statesPred = prompt("How many states have I lived in. You have " + j + " chances remaining");
+  var statesPred = prompt("Guess the names of the state I've lived in the past. You have " + j + " chances remaining");
 
   //log the user response
   console.log("User answered: " + statesPred);
 
   //if the user get any of the states correct, the user is alerted that the user got it right
   if(statesLived.includes(statesPred)){
+    
     alert("You are right.");
-
-    //increment the correct answers
     correctAns++;
     break;
-  }
-  //if user didn't get it right let the user know
-  else if(!statesLived.includes(statesPred)){
-    alert("Almost! You are close.")
-  }
-  //if the user didn't get it right let the user know
+    }
   else{
-    alert("You were close.")
+    alert("You were close. Nice try tough.");
   }
 }
 
