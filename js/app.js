@@ -67,6 +67,7 @@ function sixQuestions(){
     }
   }
 }
+
 function questionSeven(){
 //another question to the user quizzing him about me
   alert('Do you know how many states I have lived in? Let\'s play a guessing game. Let\'s guess the number of states I\'ve lived in.');
@@ -113,7 +114,7 @@ function questionEight(){
   for ( var j = 6; j > 0; j--){
 
     //ask the user the name of the states
-    var statesPred = prompt('Guess the names of the state I\'ve lived in the past. You have ' + j + ' chances remaining');
+    var statesPred = prompt('Guess the names of the state I\'ve lived in the past. You have ' + j + ' chances remaining').toLowerCase();
 
     //log the user response
     console.log('User answered: ' + statesPred);
