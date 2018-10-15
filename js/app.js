@@ -1,5 +1,9 @@
 'use strict';
 
+
+var myElement = document.getElementById('myButton');
+
+myElement.addEventListener('click',function() {
 //let the user know what is going on
 alert('Welcome! Let\'s play a guessing game so you can learn more about me?');
 
@@ -143,7 +147,7 @@ main();
 //alert the user, the number of correct answers the user was able to provide
 alert('You got ' + correctAns + ' out of 8 questions correct. You did good ' + username + '!');
 
-
+})
 
 
 
